@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+/*import { useEffect } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 
@@ -34,4 +34,4 @@ const SVGLayer = ({ svgContent, coords }: SVGLayerProps) => {
   return null;
 };
 
-export default SVGLayer;
+export default SVGLayer;*/
