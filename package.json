@@ -1,13 +1,16 @@
 {
-  "name": "Mapa_Cuba",
+  "name": "cuba-maps",
   "private": true,
+  "homepage": "https://sathaniel99.github.io/Portafolio",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -f"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -43,6 +46,7 @@
     "cmdk": "^1.1.1",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.6.0",
+    "gh-pages": "^6.3.0",
     "input-otp": "^1.4.2",
     "leaflet": "^1.9.4",
     "leaflet-easybutton": "^2.4.0",
