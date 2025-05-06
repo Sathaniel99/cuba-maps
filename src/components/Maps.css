@@ -1,0 +1,16 @@
+.leaflet-touch .leaflet-bar button{
+    padding: 0;
+    width: 35px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:active{
+        background-color: #dfdfdf;
+    }
+    
+}
+.button-state{
+    width: auto !important;
+    height: auto !important;
+}
