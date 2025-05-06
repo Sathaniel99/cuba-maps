@@ -6,6 +6,13 @@ import { defineConfig } from "vite"
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "leaflet/dist/leaflet.css";`
+      }
+    }
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

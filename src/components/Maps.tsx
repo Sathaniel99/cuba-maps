@@ -1,20 +1,10 @@
-'use client';
-
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useEffect, useRef, useState, forwardRef } from 'react';
 import 'leaflet-easybutton/src/easy-button.css';
 import 'leaflet-easybutton/src/easy-button';
-import '@/components/Maps.css';
-import SVGLayer from '@/components/SVGLayer';
-
-// Extender Leaflet para incluir EasyButton
-declare global {
-  interface Window {
-    L: typeof L;
-  }
-}
+import './Maps.css';
 
 // Configuración para los iconos del marcador
 const DefaultIcon = L.icon({
@@ -32,9 +22,10 @@ interface MapProps {
   zoom?: number;
   onResetView?: () => void;
   activeProvince?: {
+    name: string;
     coords: [number, number];
     svg?: string;
-  };
+  } | null;
 }
 
 const Map = forwardRef<L.Map | null, MapProps>(({
@@ -46,15 +37,12 @@ const Map = forwardRef<L.Map | null, MapProps>(({
   const mapRef = useRef<L.Map | null>(null);
   const [mapReady, setMapReady] = useState(false);
 
-  // Cargar EasyButton correctamente
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.L = L;
-      // No necesitamos require(), ya que importamos directamente el script
     }
   }, []);
 
-  // Exponer la instancia del mapa al componente padre
   useEffect(() => {
     if (mapRef.current) {
       if (typeof ref === 'function') {
@@ -75,10 +63,9 @@ const Map = forwardRef<L.Map | null, MapProps>(({
     onResetView?.();
   };
 
-  // Volar a las nuevas coordenadas cuando cambia el centro
   useEffect(() => {
     if (mapRef.current && center) {
-      mapRef.current.flyTo(center, 7, {
+      mapRef.current.flyTo(center, 12, {
         duration: 1.5,
         easeLinearity: 0.25
       });
@@ -122,6 +109,7 @@ const Map = forwardRef<L.Map | null, MapProps>(({
 
     return null;
   }
+
   return (
     <MapContainer
       ref={(instance) => {
@@ -141,26 +129,19 @@ const Map = forwardRef<L.Map | null, MapProps>(({
       whenReady={() => setMapReady(true)}
       zoomControl={false}
     >
-      
       <TileLayer
-      //  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      //  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      ///>
-      //<TileLayer
         url="http://mapas.geocuba.cu/geoserver/gwc/service/wmts?service=wmts&request=GetTile&version=1.0.0&layer=satelite&style=&tilematrixset=EPSG:900913&tilematrix=EPSG:900913:{z}&tilerow={y}&tilecol={x}&format=image/png"
         attribution='&copy; GEOCUBA'
       />
 
       {activeProvince && (
-        <>
-          <Marker position={center}>
-            <Popup>
-              <div className=''>
-                <h2 className='text-2xl font-bold'>{activeProvince.name}</h2>
-              </div>
-            </Popup>
-          </Marker>
-        </>
+        <Marker position={activeProvince.coords}>
+          <Popup>
+            <div className=''>
+              <h2 className='text-2xl font-bold'>{activeProvince.name}</h2>
+            </div>
+          </Popup>
+        </Marker>
       )}
       
       {mapReady && (
