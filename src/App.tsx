@@ -37,11 +37,11 @@ function App() {
 
   return (
     <>
-      <nav className='w-full border border-slate-800 p-3 shadow-xl/20 shadow-amber-200 text-center text-[1.7rem] bg-slate-950 text-slate-100'>
+      <nav className='w-full border border-slate-800 p-3 text-center text-[1.7rem] text-slate-100 bg-slate-800/20'>
         Mapa de Cuba
       </nav>
-      <main className='flex columns text-slate-100 bg-slate-950'>
-        <aside className='w-[15rem] border-e border-slate-800 p-4 text-center flex flex-col items-stretch relative'>
+      <main className='flex columns text-slate-100'>
+        <aside className='w-[15rem] border-e border-slate-800 p-4 text-center flex flex-col items-stretch relative bg-slate-800/20 shadow-lg shadow-slate-950'>
           
           <div className='border-b-3 pb-2 mb-2'>
             <h2 className='text-[1.2rem]'>Provincias</h2>
@@ -72,10 +72,10 @@ function App() {
           
         </aside>
         <section className='p-4 flex flex-col items-center w-full gap-1'>
-          <div className='border border-slate-800 w-full max-w-[80rem] h-[30rem] rounded-sm bg-slate-800 shadow-slate-950 shadow-lg'>
+          <div className='border border-slate-800 w-full max-w-[80rem] h-[30rem] rounded-sm bg-slate-800 shadow-lg shadow-slate-950'>
             <Map center={activeProvince?.coords} onResetView={() => setActiveProvince(null)}  />
           </div>
-          <div className='border border-slate-800 w-full h-[30rem] rounded-sm shadow-slate-950 shadow-lg relative'>
+          <div className='border border-slate-800 w-full max-w-[80rem] h-[30rem] rounded-sm shadow-slate-950 shadow-lg relative bg-slate-950'>
             {activeProvince ? (
               <div className='p-4 relative min-h-[30rem]'>
                 <Button

@@ -3,4 +3,7 @@
     grid-template-rows: auto 1fr;
     width: 100%;
     min-height: 100vh;
+    background: radial-gradient(at bottom center, #182d96, #000000 75%);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
