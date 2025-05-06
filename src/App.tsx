@@ -43,11 +43,6 @@ function App() {
       <main className='flex columns text-slate-100 bg-slate-950'>
         <aside className='w-[15rem] border-e border-slate-800 p-4 text-center flex flex-col items-stretch relative'>
           
-          <div className='bottom-0 fixed flex items-center flex-col gap-2'>
-            <h2>República de Cuba</h2>
-            <img className='w-[10rem] mb-5' src="https://media.istockphoto.com/id/516927998/es/foto/acercamiento-de-cuba-de-la-bandera.jpg?s=612x612&w=0&k=20&c=fF7YrXKxzdStP5KbOA7vVBALEkpPMFjWrY35F0ZOGmU=" alt="" />
-          </div>
-          
           <div className='border-b-3 pb-2 mb-2'>
             <h2 className='text-[1.2rem]'>Provincias</h2>
           </div>
@@ -62,6 +57,17 @@ function App() {
                 {province.name}
               </Button>
             ))}
+          </div>
+
+          <div className='mt-auto pt-4 sticky bottom-0'>
+            <div className='p-3 flex flex-col items-center gap-2'>
+              <h2 className='text-sm font-medium'>República de Cuba</h2>
+              <img
+              className='w-16 h-auto mb-3'
+              src="https://media.istockphoto.com/id/516927998/es/foto/acercamiento-de-cuba-de-la-bandera.jpg?s=612x612&w=0&k=20&c=fF7YrXKxzdStP5KbOA7vVBALEkpPMFjWrY35F0ZOGmU="
+              alt="Bandera de Cuba"
+              />
+            </div>
           </div>
           
         </aside>
