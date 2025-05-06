@@ -73,8 +73,9 @@ function App() {
             <div className='p-3 flex flex-col items-center gap-2'>
               <h2 className='text-sm font-medium'>República de Cuba</h2>
               <img
-              className='w-16 h-auto mb-3 shadow-md shadow-neutral-700'
-              src="https://media.istockphoto.com/id/516927998/es/foto/acercamiento-de-cuba-de-la-bandera.jpg?s=612x612&w=0&k=20&c=fF7YrXKxzdStP5KbOA7vVBALEkpPMFjWrY35F0ZOGmU="
+              className='w-16 h-auto mb-3'
+              style={{ filter: 'drop-shadow(2px 4px 6px #2c375b)'}}
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Coat_of_arms_of_Cuba.svg/533px-Coat_of_arms_of_Cuba.svg.png"
               alt="Bandera de Cuba"
               />
             </div>
