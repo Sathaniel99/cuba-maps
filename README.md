@@ -1,4 +1,4 @@
-# Mapa de Cuba
+# Mapa de Cuba (Aun no terminado)
 
 Este proyecto es una aplicación web que muestra un mapa interactivo de Cuba, permitiendo a los usuarios explorar las diferentes provincias del país. La aplicación está construida utilizando React y Leaflet para la visualización del mapa.
 
