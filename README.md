@@ -1,55 +1,54 @@
-# React + TypeScript + Vite
+# Mapa de Cuba
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación web que muestra un mapa interactivo de Cuba, permitiendo a los usuarios explorar las diferentes provincias del país. La aplicación está construida utilizando React y Leaflet para la visualización del mapa.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Mapa Interactivo**: Utiliza Leaflet para mostrar un mapa de Cuba con marcadores para cada provincia.
+- **Información de Provincias**: Al hacer clic en una provincia, se muestra información detallada y un enlace a su página de Wikipedia.
+- **Diseño Responsivo**: Interfaz de usuario adaptable a diferentes tamaños de pantalla.
+- **Componentes Reutilizables**: Uso de componentes de React para una estructura modular y fácil de mantener.
 
-## Expanding the ESLint configuration
+## Tecnologías Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
+- **Leaflet**: Biblioteca de JavaScript para mapas interactivos.
+- **TypeScript**: Para tipado estático y mejora de la calidad del código.
+- **Tailwind CSS**: Para estilos y diseño responsivo.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Estructura del Proyecto
+
+- **`App.tsx`**: Componente principal de la aplicación que contiene la lógica y la estructura de la interfaz de usuario.
+- **`Maps.tsx`**: Componente que maneja la visualización del mapa utilizando Leaflet.
+- **`components/ui/button`**: Componente de botón reutilizable.
+- **`App.css`**: Estilos globales de la aplicación.
+- **`Maps.css`**: Estilos específicos para el componente del mapa.
+
+## Instalación
+
+1. Clona el repositorio:
+```bash
+  git clone https://github.com/tu-usuario/mapa-de-cuba.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Navega al directorio del proyecto:
+```bash
+  cd mapa-de-cuba
 ```
-"# cuba-maps" 
+
+3. Instala las dependencias:
+```bash
+  npm install
+```
+
+4. Inicia la aplicación:
+```bash
+  npm start
+```
+
+## Uso
+
+- **Selección de Provincia**: Haz clic en el nombre de una provincia en el panel lateral para centrar el mapa en esa provincia y mostrar información adicional.
+- **Vista General**: Utiliza el botón en la esquina superior izquierda del mapa para volver a la vista general de Cuba.
+
+## ¡Gracias por usar el Mapa de Cuba! Espero que encuentres útil esta herramienta para explorar las provincias de Cuba.
